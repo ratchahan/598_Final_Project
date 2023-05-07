@@ -3,49 +3,40 @@ Final Project for CS 598 Deep Learning for Healthcare
 
 >📋  A template README.md for code accompanying a Machine Learning paper
 
-# My Paper Title
+# SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS
 
-This repository is the official implementation of [My Paper Title](https://arxiv.org/abs/2030.12345). 
+This repository is the official implementation of [SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS](https://arxiv.org/abs/1609.02907). 
 
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
+>📋  Our code submission is in the form of a jupyter notebook. This was approved in Campuswire post #1957
 
 ## Requirements
 
-To install requirements:
+All additional requirements are installed in the notebook:
 
 ```setup
-pip install -r requirements.txt
+!pip install dgl
 ```
 
->📋  Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
 
-## Training
+## Training and Evaluation
 
-To train the model(s) in the paper, run this command:
+To train and evaluate the model(s) in the paper with the three citation network datasets, run one of these three commands (note this is included in a cell in the notebook):
 
 ```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
+citeseer_dataset =  dgl.data.CiteseerGraphDataset()
+train_and_test_model(citeseer_dataset)
 ```
 
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
-
-## Evaluation
-
-To evaluate my model on ImageNet, run:
-
-```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
+```train
+cora_dataset =  dgl.data.CoraGraphDataset()
+train_and_test_model(cora_dataset)
 ```
 
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
+```train
+pubmed_dataset =  dgl.data.PubmedGraphDataset()
+train_and_test_model(pubmed_dataset)
+```
 
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
->📋  Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
 
 ## Results
 

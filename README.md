@@ -40,18 +40,14 @@ train_and_test_model(pubmed_dataset)
 
 ## Results
 
-Our model achieves the following performance on :
-
-### [Image Classification on ImageNet](https://paperswithcode.com/sota/image-classification-on-imagenet)
-
-| Model name         | Top 1 Accuracy  | Top 5 Accuracy |
-| ------------------ |---------------- | -------------- |
-| My awesome model   |     85%         |      95%       |
-
->📋  Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
+Our model achieves the following performance with the three citation networks from the paper:
 
 
-## Contributing
+| Model                | Citeseer    | Cora       | Pubmed     |
+|----------------------|-------------|------------|------------|
+| GCN (original paper) | 70.3 (7s)   | 81.5 (4s)  | 79.0 (38s) |
+| GCN (Pytorch)        | 70.5 (2.35s)| 81.6 (0.96s)| 78.5 (1.16s)|
 
->📋  Pick a licence and describe how to contribute to your code repository. 
+Note that there are additional ablations we implemented (Renormalization Removal and Sparse Matrix Multiplication Removal). The results for these ablation studies are documented in the notebook. 
+
 
